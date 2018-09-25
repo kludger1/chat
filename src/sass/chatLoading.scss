@@ -1,0 +1,38 @@
+#page-wrapper {
+    padding: 17em 5em;
+  }
+  
+  .loading {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    color: #000;
+  }
+  
+  .loading:before,
+  .loading:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 -3.3em;
+    width: 10em;
+    border-bottom: 1px solid #000;
+    animation: loading 3s forwards linear;
+    animation-iteration-count: infinite;
+  }
+  
+
+ 
+  @keyframes loading {
+    0% {
+      width: 0em;
+      opacity: 0.1;
+    }
+    70% {
+      width: 8em;
+      opacity: 1;
+    }
+    100% {
+      width: 10em;
+      opacity: 0;
+    }
+  }

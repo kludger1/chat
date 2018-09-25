@@ -1,10 +1,19 @@
 import navigate from './navigation'
 
 
-var provider = new firebase.auth.GoogleAuthProvider();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+const facebookProvider = new firebase.auth.FacebookAuthProvider();
 
 // Function to login with Google
 export function logInWithGoogle() {
+  socialLogin(googleProvider);
+}
+
+export function loginWithFacebook() {
+  socialLogin(facebookProvider);
+}
+
+export function socialLogin(provider) {
   firebase.auth().signInWithPopup(provider).then(function (result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
@@ -21,6 +30,29 @@ export function logInWithGoogle() {
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
 
+    alert(errorMessage);
+  });
+}
+
+export function signUpWithEmailAndPassword(email, password) {
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    
+    alert(errorMessage);
+  });
+}
+
+export function loginWithEmailAndPassword() {
+  let email = $('#email').val();
+  let password = $('#password').val();
+
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    
     alert(errorMessage);
   });
 }

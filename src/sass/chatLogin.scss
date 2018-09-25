@@ -1,0 +1,160 @@
+div {
+ .login-container {
+    margin-top: 25px;
+    width: 100%;
+    height: 700px;
+    background-color: $container-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+   .login-container-body {
+    width: 70%;
+    min-width: 436px;
+    height: 600px;
+    border: 1px solid black;
+    background: url(../images/login-images/bg-img.jpg);
+    box-shadow: 0px 0px 20px 5px #888888;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .login-box {
+    width: 400px;
+    min-width: 345px;
+    border: 1px solid black;
+    background-color: #ffffff;
+    opacity: 0.9;
+    margin: -20px 10%;
+    box-shadow: -1px 0px 1px 0px #888888, 0.5px 0px 2px 0px #888888;
+  }
+  
+  .fold {
+    position: relative;
+    top: -180.5px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    transform: rotate(45deg);
+  }
+  
+  .fold {
+    border: 14px solid black;
+    border-left-color: black;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+  
+  .fold2 {
+    position: relative;
+    top: 392.5px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    transform: rotate(45deg);
+  }
+  
+  .fold2 {
+    border: 14px solid black;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: black;
+  }
+  
+  .logo {
+    min-width: 185px;
+    min-height: 185px;
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
+    top: 10px;
+    left: 104px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+  }
+  
+  .text-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+  }
+  
+  input[type=text], input[type=password] {
+    border: 1px solid black;
+    width: 80%;
+    margin: 10px;
+    padding: 18px;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+  }
+  
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    min-width: 348px;
+    min-height: 62px;
+  }
+  
+  .fg-img {
+    width: 15px;
+    height: 15px;
+    margin-right: 30px;
+  }
+  
+  .google-img {
+    width: 15px;
+    height: 15px;
+    margin-right: 30px;
+  }
+  
+  #fb-btn, #google-btn {
+    padding: 18px;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    text-align: left;
+  }
+  
+  #fb-btn {
+    border: 1px solid black;
+    background-color: #3B5998;
+    margin: 10px 20px 0px 30px;
+  }
+  
+  #google-btn {
+    border: 1px solid black;
+    background-color: #dd4b39;
+    margin: 10px 20px 30px 30px;
+  }
+  
+  .button-container {
+    background-color: gray;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 0px;
+    border: 1px solid black;
+  }
+  
+  #sign-in, #sign-up {
+    border: none;
+    background-color: gray;
+    padding: 18px;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+  }
+}

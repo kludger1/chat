@@ -1,17 +1,17 @@
 import $ from 'jquery'
-import { createPersistantSession,logInWithGoogle} from '../../auth'
+import { createPersistantSession, logInWithGoogle, loginWithFacebook, loginWithEmailAndPassword } from '../../auth'
 
 function mountLoginScreen() {
-  $('#root').html(LoginScreen());
-  initLoginScreenListeners();
+    $('#root').html(LoginScreen());
+    initLoginScreenListeners();
 }
 
 function LoginScreen() {
-  let container = document.createElement('div');
+    let container = document.createElement('div');
 
-  container.id = 'login-screen';
-  container.classList.add('login-screen');
-  container.innerHTML = `
+    container.id = 'login-screen';
+    container.classList.add('login-screen');
+    container.innerHTML = `
   <div class="login-container">
 
 
@@ -24,8 +24,8 @@ function LoginScreen() {
                 <div class="fold2"></div>
                 <form action="#">
                     <div class="text-area">
-                        <input type="text" name="email" placeholder="EMAIL">
-                        <input type="password" name="password" placeholder="PASSWORD">
+                        <input type="text" name="email" placeholder="EMAIL" id= "email">
+                        <input type="password" name="password" placeholder="PASSWORD" id="password">
                     </div>
 
                     <div class="social-buttons">
@@ -47,13 +47,25 @@ function LoginScreen() {
 
   `;
 
-  return container;
+    return container;
 }
 
 function initLoginScreenListeners() {
-  $('#google-btn').on('click', function(){
-    createPersistantSession(logInWithGoogle);
-  });
+    $('#google-btn').on('click', function () {
+        createPersistantSession(logInWithGoogle);
+    });
+
+    $('#fb-btn').on('click', function () {
+        createPersistantSession(loginWithFacebook);
+    });
+
+    $('#sign-in').on('click', function () {
+        createPersistantSession(loginWithEmailAndPassword);
+        $('#sign-up').on('click', function () {
+            navigate('sign-up-screen');
+        });
+    });
+
 }
 
 export default mountLoginScreen;
