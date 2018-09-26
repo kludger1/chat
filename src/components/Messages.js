@@ -11,7 +11,7 @@ function Message(msg, showUsername) {
 
 
 
-    <div class="chat-body">
+  
     
     <div class="msg-container">
 
@@ -23,17 +23,17 @@ function Message(msg, showUsername) {
     }
 
     <div class="bubble ${isMe ? 'msg-bubble-right' : 'msg-bubble-left'}">
+    <div class="msg-text">${msg.text}</div>
     ${showUsername ? 
       `<div class="msg-name">
         ${msg.email.split('@')[0]}
       </div>` 
       : ''}
-        <div class="msg-text">${msg.text}</div>
         <div class="msg-date-time">${moment(msg.date).format('MM/DD/YYYY hh:mm')}</div>
         </div>
     </div>
 
-</div>
+
 
 
 
