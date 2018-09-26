@@ -6,3 +6,9 @@ body {
     padding: 0;
     background-color: $container-bg;
   }
+
+  #error-message {
+    color: #BE1C1C;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+  }

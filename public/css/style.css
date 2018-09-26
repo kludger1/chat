@@ -4,6 +4,12 @@ body {
   background-color: #F3F1F1;
 }
 
+#error-message {
+  color: #BE1C1C;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
 .signUp-container {
   margin-top: 25px;
   width: 100%;
@@ -14,12 +20,12 @@ body {
   align-items: center;
 }
 
-.container-body {
+.signUp-container-body {
   width: 70%;
   min-width: 436px;
   height: 600px;
   border: 1px solid black;
-  background: url(../images/bg-img.jpg);
+  background: url(../images/login-images/bg-img.jpg);
   box-shadow: 0px 0px 20px 5px #888888;
   display: flex;
   justify-content: flex-end;
@@ -79,7 +85,7 @@ body {
   left: 104px;
 }
 
-.logo-img {
+.signUp-img {
   width: 100%;
   height: 100%;
 }
@@ -115,7 +121,7 @@ input[type=text], input[type=password] {
   border: 1px solid black;
 }
 
-#sign-up, #back-btn {
+#sign-up-btn, #back-btn {
   border: none;
   background-color: gray;
   padding: 18px;
@@ -418,7 +424,7 @@ div .button-container {
   margin-top: 0px;
   border: 1px solid black;
 }
-div #sign-in, div #sign-up {
+div #login-sign-in, div #login-sign-up {
   border: none;
   background-color: gray;
   padding: 18px;

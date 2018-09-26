@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import navigate from './navigation'
 
 
@@ -53,7 +54,7 @@ export function loginWithEmailAndPassword() {
     var errorCode = error.code;
     var errorMessage = error.message;
     
-    alert(errorMessage);
+    document.getElementById('error-message').innerHTML =  errorMessage
   });
 }
 

@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import navigate from '../../navigation'
 import { createPersistantSession, logInWithGoogle, loginWithFacebook, loginWithEmailAndPassword } from '../../auth'
 
 function mountLoginScreen() {
@@ -23,6 +24,8 @@ function LoginScreen() {
                 <div class="fold"></div>
                 <div class="fold2"></div>
                 <form action="#">
+                <div id="error-message">
+                </div>
                     <div class="text-area">
                         <input type="text" name="email" placeholder="EMAIL" id= "email">
                         <input type="password" name="password" placeholder="PASSWORD" id="password">
@@ -34,8 +37,8 @@ function LoginScreen() {
                     </div>
 
                     <div class="button-container">
-                        <input id="sign-in" type="submit" value="SIGN IN">
-                        <input id="sign-up" type="submit" value="SIGN UP">
+                    <input id="login-sign-up" type="submit" value="SIGN UP">
+                        <input id="login-sign-in" type="submit" value="SIGN IN">
                     </div>
                 </form>
             </div>
@@ -53,19 +56,24 @@ function LoginScreen() {
 function initLoginScreenListeners() {
     $('#google-btn').on('click', function () {
         createPersistantSession(logInWithGoogle);
-    });
+    })
+    // .keypress(function () {
+    //     document.getElementById('google-btn').style.opacity = 1
+    // });
 
     $('#fb-btn').on('click', function () {
         createPersistantSession(loginWithFacebook);
     });
 
-    $('#sign-in').on('click', function () {
+    $('#login-sign-in').on('click', function () {
         createPersistantSession(loginWithEmailAndPassword);
-        $('#sign-up').on('click', function () {
-            navigate('sign-up-screen');
-        });
     });
 
+    $('#login-sign-up').on('click', function () {
+        navigate('sign-up-screen');
+    });
+
+   
 }
 
 export default mountLoginScreen;
