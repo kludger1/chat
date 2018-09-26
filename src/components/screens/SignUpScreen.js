@@ -26,7 +26,7 @@ function SignUpScreen() {
                 </div>
                 <div class="fold"></div>
                 <div class="fold2"></div>
-                <form action="#">
+                <form>
                 <div id="error-message">
                 </div>
                     <div class="text-area">

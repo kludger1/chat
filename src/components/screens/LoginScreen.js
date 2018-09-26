@@ -23,7 +23,7 @@ function LoginScreen() {
                 </div>
                 <div class="fold"></div>
                 <div class="fold2"></div>
-                <form action="#">
+                <form>
                 <div id="error-message">
                 </div>
                     <div class="text-area">
@@ -65,11 +65,13 @@ function initLoginScreenListeners() {
         createPersistantSession(loginWithFacebook);
     });
 
-    $('#login-sign-in').on('click', function () {
+    $('#login-sign-in').on('click', function (e) {
+        e.preventDefault();
         createPersistantSession(loginWithEmailAndPassword);
     });
 
-    $('#login-sign-up').on('click', function () {
+    $('#login-sign-up').on('click', function (e) {
+        e.preventDefault();
         navigate('sign-up-screen');
     });
 
