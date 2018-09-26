@@ -79,7 +79,11 @@
     position: relative;
     margin: 20px 30px;
 	}
-	
+  
+  .msg-bubble-left > img {
+    width: 10%;
+height: 10%;
+  }
 		
 	.msg-bubble-left::before {
         content:"";
@@ -101,6 +105,11 @@
   background: #CDEEEE;
   position: relative;
   margin-right: 10px;
+        }
+
+        .msg-bubble-right > img {
+          width: 10%;
+    height: 10%;
         }
     
     .msg-bubble-right::after {
