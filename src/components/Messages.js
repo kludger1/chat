@@ -18,7 +18,7 @@ function Message(msg, showUsername) {
     <div style="display: flex; justify-content: ${isMe ? 'flex-end' : 'flex-start'}"> 
     ${
       !isMe ? 
-  `<img src="${msg.photoURL ? msg.photoURL : './images/logo.png'}" width="50px" height="50px" />` 
+  `<img src="${msg.photoURL ? msg.photoURL : './images/logo.png'}"/>` 
       : ''
     }
 
