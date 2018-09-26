@@ -18,7 +18,7 @@ function LoginScreen() {
         <div class="login-container-body">
             <div class="login-box">
                 <div class="logo">
-                    <img src="./images/login-images/Logo.svg" alt="A logo that has a black capital K and L.">
+                    <img class = "logo-img" src="./images/login-images/Logo.svg" alt="A logo that has a black capital K and L.">
                 </div>
                 <div class="fold"></div>
                 <div class="fold2"></div>
