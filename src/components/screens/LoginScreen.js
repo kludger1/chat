@@ -55,6 +55,7 @@ function LoginScreen() {
 
 function initLoginScreenListeners() {
     $('#google-btn').on('click', function () {
+        e.preventDefault();
         createPersistantSession(logInWithGoogle);
     })
     // .keypress(function () {
@@ -62,6 +63,7 @@ function initLoginScreenListeners() {
     // });
 
     $('#fb-btn').on('click', function () {
+        e.preventDefault();
         createPersistantSession(loginWithFacebook);
     });
 

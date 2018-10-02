@@ -53,7 +53,8 @@ export function loginWithEmailAndPassword() {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    
+    // alert(errorMessage)
+    alert(errorCode)
     document.getElementById('error-message').innerHTML =  errorMessage
   });
 }
