@@ -55,7 +55,7 @@ function LoginScreen() {
 
 function initLoginScreenListeners() {
     $('#google-btn').on('click', function () {
-        e.preventDefault();
+        // e.preventDefault();
         createPersistantSession(logInWithGoogle);
     })
     // .keypress(function () {
@@ -63,17 +63,17 @@ function initLoginScreenListeners() {
     // });
 
     $('#fb-btn').on('click', function () {
-        e.preventDefault();
+        // e.preventDefault();
         createPersistantSession(loginWithFacebook);
     });
 
     $('#login-sign-in').on('click', function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         createPersistantSession(loginWithEmailAndPassword);
     });
 
     $('#login-sign-up').on('click', function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         navigate('sign-up-screen');
     });
 
