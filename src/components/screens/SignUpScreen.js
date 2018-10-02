@@ -5,17 +5,18 @@ import { isValidEmail, isValidPassword } from '../../validate'
 
 
 
+
 function mountSignUpScreen() {
-  $('#root').html(SignUpScreen());
-  initSignUpScreenListeners();
-}
-
-function SignUpScreen() {
-  let container = document.createElement('div');
-
-  container.id = 'sign-up-screen';
-  container.classList.add('sign-up-screen');
-  container.innerHTML = `
+    $('#root').html(SignUpScreen());
+    initSignUpScreenListeners();
+  }
+  
+  function SignUpScreen() {
+    let container = document.createElement('div');
+  
+    container.id = 'sign-up-screen';
+    container.classList.add('sign-up-screen');
+    container.innerHTML = `
     <div class="signUp-container">
 
 
@@ -26,7 +27,7 @@ function SignUpScreen() {
                 </div>
                 <div class="fold"></div>
                 <div class="fold2"></div>
-                <form>
+                <form action="#">
                 <div id="error-message">
                 </div>
                     <div class="text-area">
@@ -47,35 +48,34 @@ function SignUpScreen() {
 
     </div>
     `;
+  
+    return container;
+  }
+  
+  function initSignUpScreenListeners() {
+    $('#back-btn').on('click', function() {
+      navigate('login-screen');
+    });
+  
+    $('#sign-up-btn').on('click', function(){
+      let email = $('#email').val();
+      let password = $('#password').val();
+      let passwordConfirmation = $('#password-confirmation').val();
+  
+      if (!isValidEmail(email)) {
+        document.getElementById('error-message').innerHTML = 'Invalid e-mail'
+      }
+      else if (!isValidPassword(password)) {
+        document.getElementById('error-message').innerHTML = 'Invalid password'
+      }
+      else if (password !== passwordConfirmation) {
+        document.getElementById('error-message').innerHTML = 'Passwords do not match'
+      }
+      else {
+        signUpWithEmailAndPassword(email, password);
+      }
+      
+    });
+  }
 
-  return container;
-}
-
-function initSignUpScreenListeners() {
-  $('#back-btn').on('click', function () {
-    navigate('login-screen');
-  });
-
-  $('#sign-up-btn').on('click', function () {
-    let email = $('#email').val();
-    let password = $('#password').val();
-    let passwordConfirmation = $('#password-confirmation').val();
-
-    if (!isValidEmail(email)) {
-      document.getElementById('error-message').innerHTML = 'Invalid e-mail'
-    }
-    else if (!isValidPassword(password)) {
-      document.getElementById('error-message').innerHTML = 'Invalid password'
-    }
-    else if (password !== passwordConfirmation) {
-      document.getElementById('error-message').innerHTML = 'Passwords do not match'
-    }
-    else {
-      signUpWithEmailAndPassword(email, password);
-    }
-
-  });
-}
-
-
-export default mountSignUpScreen
+  export default mountSignUpScreen;

@@ -23,12 +23,12 @@ function LoginScreen() {
                 </div>
                 <div class="fold"></div>
                 <div class="fold2"></div>
-                <form>
+                <form action="#">
                 <div id="error-message">
                 </div>
                     <div class="text-area">
-                        <input type="text" name="email" placeholder="EMAIL" id= "email">
-                        <input type="password" name="password" placeholder="PASSWORD" id="password">
+                        <input type="text"  placeholder="EMAIL" id= "email">
+                        <input type="password"  placeholder="PASSWORD" id="password" autocomplete="on">
                     </div>
 
                     <div class="social-buttons">
@@ -38,7 +38,7 @@ function LoginScreen() {
 
                     <div class="button-container">
                     <input id="login-sign-up" type="submit" value="SIGN UP">
-                        <input id="login-sign-in" type="submit" value="SIGN IN">
+                    <input id="login-sign-in" type="submit" value="SIGN IN">
                     </div>
                 </form>
             </div>
@@ -54,30 +54,25 @@ function LoginScreen() {
 }
 
 function initLoginScreenListeners() {
-    $('#google-btn').on('click', function () {
-        // e.preventDefault();
+    $('#google-btn').on('click', function (e) {
+        e.preventDefault();
         createPersistantSession(logInWithGoogle);
-    })
-    // .keypress(function () {
-    //     document.getElementById('google-btn').style.opacity = 1
-    // });
+    });
 
-    $('#fb-btn').on('click', function () {
-        // e.preventDefault();
+    $('#fb-btn').on('click', function (e) {
+        e.preventDefault();
         createPersistantSession(loginWithFacebook);
     });
 
     $('#login-sign-in').on('click', function (e) {
-        // e.preventDefault();
+        e.preventDefault();
         createPersistantSession(loginWithEmailAndPassword);
-    });
 
+    });
     $('#login-sign-up').on('click', function (e) {
-        // e.preventDefault();
+        e.preventDefault();
         navigate('sign-up-screen');
     });
-
-   
 }
 
 export default mountLoginScreen;
